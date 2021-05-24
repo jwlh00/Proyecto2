@@ -1,0 +1,60 @@
+Knives Out|Suspenso
+Us|Suspenso
+Get Out|Suspenso
+The Irishman|Suspenso
+Rebecca|Suspenso
+A Quiet Place|Suspenso
+Spotlight|Suspenso
+The Third Man|Suspenso
+Psycho|Suspenso
+Jaws|Suspenso
+Frankenstein|Terror
+It Follows|Terror
+Aliens|Terror
+Halloween|Terror
+Eyes Without a Face|Terror
+Host|Terror
+It|Terror
+Relic|Terror
+Dracula|Terror
+Evil Dead 2:Dead by Dawn|Terror
+Howl’s Moving Castle|Anime
+Spirited Away|Anime
+Sword Art Online The Movie: Ordinal Scale|Anime
+A Silent Voice|Anime
+Rebuild of Evangelion|Anime
+The Girl Who Leapt Through Time|Anime
+Wolf Children|Anime
+Demon Slayer: Kimetsu no Yaiba the Movie: Mugen Train|Anime
+5 Centimeters per Second|Anime
+Your Name|Anime
+Meet the Parents|Comedia
+Mean Girls|Comedia
+Pulp Fiction|Comedia
+Hot Fuzz|Comedia
+Palm Springs|Comedia
+Booksmart|Comedia
+Popstar: Never Stop Never Stopping|Comedia
+School of Rock|Comedia
+Old School|Comedia
+The Big Sick|Comedia
+Black Panther|Accion
+Avengers: Endgame|Accion
+Mission: Impossible - Fallout|Accion
+Mad Max: Fury Road|Accion
+Spiderman-Man: Into the Spider-Verse|Accion
+Wonder Woman|Accion
+Dunkirk|Accion
+Coco|Accion
+Thor: Ragnarok|Accion
+Logan|Accion
+It Happened One Night|Romance
+Casablanca|Romance
+A Night at the Opera|Romance
+The Shape of Water|Romance
+Singin' in the Rain|Romance
+An American in Paris|Romance
+On the Waterfront|Romance
+The Best Years of our Lives|Romance
+Call Me by Your Name|Romance
+The Lady Eve|Romance
