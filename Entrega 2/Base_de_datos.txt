@@ -1,60 +1,80 @@
-Knives Out|Suspenso
-Us|Suspenso
-Get Out|Suspenso
-The Irishman|Suspenso
-Rebecca|Suspenso
-A Quiet Place|Suspenso
-Spotlight|Suspenso
-The Third Man|Suspenso
-Psycho|Suspenso
-Jaws|Suspenso
-Frankenstein|Terror
-It Follows|Terror
-Aliens|Terror
-Halloween|Terror
-Eyes Without a Face|Terror
-Host|Terror
-It|Terror
-Relic|Terror
-Dracula|Terror
-Evil Dead 2:Dead by Dawn|Terror
-Howl’s Moving Castle|Anime
-Spirited Away|Anime
-Sword Art Online The Movie: Ordinal Scale|Anime
-A Silent Voice|Anime
-Rebuild of Evangelion|Anime
-The Girl Who Leapt Through Time|Anime
-Wolf Children|Anime
-Demon Slayer: Kimetsu no Yaiba the Movie: Mugen Train|Anime
-5 Centimeters per Second|Anime
-Your Name|Anime
-Meet the Parents|Comedia
-Mean Girls|Comedia
-Pulp Fiction|Comedia
-Hot Fuzz|Comedia
-Palm Springs|Comedia
-Booksmart|Comedia
-Popstar: Never Stop Never Stopping|Comedia
-School of Rock|Comedia
-Old School|Comedia
-The Big Sick|Comedia
-Black Panther|Accion
-Avengers: Endgame|Accion
-Mission: Impossible - Fallout|Accion
-Mad Max: Fury Road|Accion
-Spiderman-Man: Into the Spider-Verse|Accion
-Wonder Woman|Accion
-Dunkirk|Accion
-Coco|Accion
-Thor: Ragnarok|Accion
-Logan|Accion
-It Happened One Night|Romance
-Casablanca|Romance
-A Night at the Opera|Romance
-The Shape of Water|Romance
-Singin' in the Rain|Romance
-An American in Paris|Romance
-On the Waterfront|Romance
-The Best Years of our Lives|Romance
-Call Me by Your Name|Romance
-The Lady Eve|Romance
+Knives Out|Suspenso|8
+Us|Suspenso|7
+Get Out|Suspenso|8
+The Irishman|Suspenso|8
+Rebecca|Suspenso|8
+A Quiet Place|Suspenso|8
+River Runs Red|Suspenso|4
+Spotlight|Suspenso|8
+The Third Man|Suspenso|8
+The Haunting of Sharon Tate|Suspenso|2
+Psycho|Suspenso|9
+Dark Crimes|Suspenso|5
+Chaos|Suspenso|3
+Jaws|Suspenso|8
+Frankenstein|Terror|8
+It Follows|Terror|6
+Aliens|Terror|8
+Eyes Without a Face|Terror|8
+Host|Terror|6
+Troll 2|Terror|2
+The Mangle|Terror|4
+It|Terror|7
+Relic|Terror|6
+Dracula|Terror|7
+The Happening|Terror|5
+Evil Dead 2:Dead by Dawn|Terror|8
+Sharknado|Terror|3
+Howl’s Moving Castle|Anime|8
+Conan, The Boy In Future|Anime|5
+Spirited Away|Anime|9
+Sword Art Online The Movie: Ordinal Scale|Anime|7
+A Silent Voice|Anime|8
+Rebuild of Evangelion|Anime|7
+The Girl Who Leapt Through Time|Anime|8
+Nadia: The Secret Of Fuzzy|Anime|4
+Wolf Children|Anime|8
+Demon Slayer: Kimetsu no Yaiba the Movie: Mugen Train|Anime|9
+5 Centimeters per Second|Anime|8
+Your Name|Anime|8
+6 Angels|Anime|4
+Meet the Parents|Comedia|7
+Cats|Comedia|2
+Strange Wilderness|Comedia|5
+The Honeymooners|Comedia|3
+Mean Girls|Comedia|7
+Mean Girls 2|Comedia|4
+Pulp Fiction|Comedia|9
+Hot Fuzz|Comedia|8
+Palm Springs|Comedia|7
+Booksmart|Comedia|7
+Popstar: Never Stop Never Stopping|Comedia|6
+School of Rock|Comedia|7
+Old School|Comedia|7
+The Big Sick|Comedia|8
+Black Panther|Accion|7
+Avengers: Endgame|Accion|8
+Mission: Impossible - Fallout|Accion|8
+Mad Max: Fury Road|Accion|6
+Dragonball Evolution|Accion|3|
+Turbo: A Power Rangers Movie|Accion|3
+Spiderman-Man: Into the Spider-Verse|Accion|8
+King Kong Lives|Accion|3
+Wonder Woman|Accion|7
+River Runs Red|Accion|5
+Dunkirk|Accion|7
+Coco|Accion|8
+Thor: Ragnarok|Accion|8
+Logan|Accion|8
+It Happened One Night|Romance|8
+Casablanca|Romance|9
+A Night at the Opera|Romance|8
+The Switch|Romance|6
+The Shape of Water|Romance|7
+Singin' in the Rain|Romance|8
+An American in Paris|Romance|7
+On the Waterfront|Romance|8
+The Best Years of our Lives|Romance|8
+Call Me by Your Name|Romance|8
+The Lady Eve|Romance|7
+Valentine's Day|5
