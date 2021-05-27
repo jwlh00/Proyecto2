@@ -18,7 +18,6 @@ graphdp = GraphDatabase.driver(uri="bolt://184.72.122.172:7687", auth=("algoritm
 global session
 session = graphdp.session()
 
-# session.run("MATCH (Genero {name:Anime})--(Pelicula)", "RETURN Pelicula.Nombre")
 
 #Variable granted de la seccion de login
 granted = False
@@ -72,9 +71,11 @@ def grant():
 
 
 def login(name, password):
+    #Funcion para login
     success = False
     file = open("userInfo.txt", "r")
     for i in file:
+        #Confirmar que lo que ingreso el usuario es igual a lo del archivo
         a, b = i.split(",")
         b = b.strip()
         if (a == name and b == password):
@@ -85,32 +86,35 @@ def login(name, password):
         print("Logged in")
         grant()
     else:
-        print("Usuario o contrasenia incorrecta\n")
+        print("Usuario o contraseña incorrecta\n")
         begin()
         access(option)
 
 
 def register(name, password):
+    #Funcion para guardar el usuario y contraseña que el usuario ingreso
     file = open("userInfo.txt", "a")
     file.write("\n" + name + "," + password)
 
 
 def access(option):
+    #Funcion para verificar si el usuario eligio la opcion de Login o Registrar
     if (option == "L"):
         print("Login")
         print("-----")
         name = input("Ingrese su usuario: ")
-        password = input("Ingrese su contrasenia: ")
+        password = input("Ingrese su contraseña: ")
         login(name, password)
     elif (option == "R"):
         print("Registrar")
         print("---------")
         name = input("Ingrese su usuario: ")
-        password = input("Ingrese su contrasenia: ")
+        password = input("Ingrese su contraseña: ")
         register(name, password)
 
 
 def begin():
+    #Funcion de mostrar el menu de inicio
     global option
     option = input(
         "Ingrese una de las siguientes opciones \n(L) para log in: \n(R) para registrar:\n(S) para salir:\n ")
@@ -119,6 +123,7 @@ def begin():
 
 
 def delete():
+    #Funcion para eliminar peliculas del base de datos
     deleteRun = True
     while (deleteRun):
         try:
@@ -131,6 +136,7 @@ def delete():
 
 
 def encuesta():
+    #Funcion para realizar encuestas al usuarios para crearles recomendaciones.
     pregunta1 = True
     genSuspenso = 0
     genTerror = 0
@@ -324,6 +330,7 @@ def encuesta():
 
 
 def rating():
+    #Funcion para cambiar la puntuacion de las peliculas que el usuario quiera.
     ratingBool = True
 
     while (ratingBool):
@@ -354,14 +361,14 @@ def rating():
             print("Ha ingresado un nombre invalido")
 
 
-begin()
+begin() #Llamar al menu principal
 access(option)
 
 while (option == "R"):
     begin()
     access(option)
 
-if (granted):
+if (granted): #Pasa cuando el usuario logra hacer log in
     print("Bienvenido al programa")
     menu()
     while num != 5:
