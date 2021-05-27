@@ -138,13 +138,15 @@ def delete():
 def encuesta():
     #Funcion para realizar encuestas al usuarios para crearles recomendaciones.
     pregunta1 = True
+    
+    #Variables de chequeo de respuestas
     genSuspenso = 0
     genTerror = 0
     genAnime = 0
     genComedia = 0
     genAccion = 0
     genRomance = 0
-    while (pregunta1):
+    while (pregunta1): #Pregunta 1
         try:
             print("Para iniciar las recomendaciones le pedimos que conteste esta breve encuesta.")
             print(
@@ -181,7 +183,7 @@ def encuesta():
             print("Ha elegido una opcion invalida, intentelo de nuevo")
 
     pregunta2 = True
-    while (pregunta2):
+    while (pregunta2): #Pregunta 2
         try:
             print(
                 "\nPregunta No. 2\n¿Que genero de peliculas es tu favorito?:\n1. Suspenso\n2. Terror\n3. Anime\n4. Comedia\n5. Accion\n6. Romance")
@@ -216,7 +218,7 @@ def encuesta():
             print("Ha elegido una opcion invalida, intentelo de nuevo")
 
     pregunta3 = True
-    while (pregunta3):
+    while (pregunta3): #Pregunta 3
         try:
             print(
                 "\nPregunta No. 3\nDe las siguientes, cual pelicula elegirias para ver segun su trama o descripcion: \n1. Donde haya una trama seria con momentos de tension \n2. Que el escenario donde se desarrolle sea oscuro y con aspectos de miedo\n3. Que sean peliculas con personajes animados\n4. Donde la historia sea graciosa y que contenga muchas bromas y chistes\n5. Donde el protagonista sea un heroe y que la trama sea sobre sus aventuras\n6. Donde sea una historia de amor entre dos personajes")
@@ -249,7 +251,8 @@ def encuesta():
                 print("La respuesta elegida no es valida, intentelo de nuevo")
         except:
             print("Ha elegido una opcion invalida, intentelo de nuevo")
-
+    
+    #Si el genero preferido es suspenso
     if genSuspenso >= max(genAccion, genAnime, genRomance, genTerror, genComedia):
         session = graphdp.session()
         result = session.run("MATCH (Genero {name: 'Suspenso'})--(Pelicula)"
@@ -262,7 +265,8 @@ def encuesta():
         variable = heapq.nlargest(5, zip(lista2, lista))
         for i in range(len(variable)):
             print(variable[i][1] + "| Calificacion: " + variable[i][0])
-
+    
+    #Si el genero preferido es accion
     elif genAccion >= max(genSuspenso, genAnime, genRomance, genTerror, genComedia):
         session = graphdp.session()
         result = session.run("MATCH (Genero {name: 'Accion'})--(Pelicula)"
@@ -275,7 +279,8 @@ def encuesta():
         variable = heapq.nlargest(5, zip(lista2, lista))
         for i in range(len(variable)):
             print(variable[i][1] + "| Calificacion: " + variable[i][0])
-
+    
+    #Si el genero preferido es Romance
     elif genRomance >= max(genSuspenso, genAnime, genAccion, genTerror, genComedia):
         session = graphdp.session()
         result = session.run("MATCH (Genero {name: 'Romance'})--(Pelicula)"
@@ -288,7 +293,8 @@ def encuesta():
         variable = heapq.nlargest(5, zip(lista2, lista))
         for i in range(len(variable)):
             print(variable[i][1] + "| Calificacion: " + variable[i][0])
-
+    
+    #Si el genero preferido es Anime
     elif genAnime >= max(genSuspenso, genRomance, genAccion, genTerror, genComedia):
         session = graphdp.session()
         result = session.run("MATCH (Genero {name: 'Anime'})--(Pelicula)"
@@ -301,7 +307,8 @@ def encuesta():
         variable = heapq.nlargest(5, zip(lista2, lista))
         for i in range(len(variable)):
             print(variable[i][1] + "| Calificacion: " + variable[i][0])
-
+    
+    #Si el genero preferido es terror
     elif genTerror >= max(genSuspenso, genAnime, genAccion, genRomance, genComedia):
         session = graphdp.session()
         result = session.run("MATCH (Genero {name: 'Terror'})--(Pelicula)"
@@ -314,7 +321,8 @@ def encuesta():
         variable = heapq.nlargest(5, zip(lista2, lista))
         for i in range(len(variable)):
             print(variable[i][1] + "| Calificacion: " + variable[i][0])
-
+    
+    #Si el genero preferido es comedia
     elif genComedia >= max(genSuspenso, genAnime, genAccion, genTerror, genRomance):
         session = graphdp.session()
         result = session.run("MATCH (Genero {name: 'Comedia'})--(Pelicula)"
