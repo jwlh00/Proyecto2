@@ -18,26 +18,19 @@ graphdp = GraphDatabase.driver(uri="bolt://184.72.122.172:7687", auth=("algoritm
 global session
 session = graphdp.session()
 
-#session.run("MATCH (Genero {name:Anime})--(Pelicula)", "RETURN Pelicula.Nombre")
+# session.run("MATCH (Genero {name:Anime})--(Pelicula)", "RETURN Pelicula.Nombre")
 
-
-""""
-iniciando la sesion de neo4j
-session = graphdp.session()
-nomusuario="PablishPrrueba12"
-nomcancion="PruebaReplit "
-duracion="5"
-session.run("CREATE (p:Pelicula {Pelicula:'"+nomcancion+"',Duracion: '"+duracion+"'})")
-"""
 
 granted = False
+
 
 def menu():
     '''funcion para el menu principal, con la defensa para que el usuario solo
     ingrese lo que le es pedido. Haciendo que el variable "num" sea global para que
     se pueda utilizar a travez de todo el codigo.'''
     global num
-    print('\n-----Sistema de Recomendaciones-----\n1. Recomendar pelicula. \n2. Agregar pelicula. \n3. Eliminar Pelicula.\n4. Puntuar pelicula.\n5. Salir.')
+    print(
+        '\n-----Sistema de Recomendaciones-----\n1. Recomendar pelicula. \n2. Agregar pelicula. \n3. Eliminar Pelicula.\n4. Puntuar pelicula.\n5. Salir.')
     x = False
     while not x:
 
@@ -50,6 +43,7 @@ def menu():
     while num < 1 or num > 5:
         print('numero fuera de rango, por favor ingresar otra vez:')
         num = input('Ingrese el numero de lo que quiere hacer')
+
 
 def menu_genero():
     '''funcion para el menu principal, con la defensa para que el usuario solo
@@ -70,7 +64,6 @@ def menu_genero():
     while num_genero < 1 or num_genero > 5:
         print('numero fuera de rango, por favor ingresar otra vez:')
         num_genero = input('Ingrese el numero de lo que quiere hacer')
-
 
 
 def grant():
@@ -126,13 +119,15 @@ def begin():
 
 
 def delete():
-  deleteRun = True
-  while(creacionRun):
-    try:
-      nombrePelicula = input("Ingrese el nombre de la pelicula: ")
-      nombreEnBase = session.run("MATCH (n {Nombre:'"+ nombrePelicula +"'})" "DETACH DELETE n" )
-    except:
-      print("Ha ingresado un nombre invalido")
+    deleteRun = True
+    while (deleteRun):
+        try:
+            nombrePelicula = input("Ingrese el nombre de la pelicula: ")
+            nombreEnBase = session.run("MATCH (n {Nombre:'" + nombrePelicula + "'})" "DETACH DELETE n")
+            print("La pelicula ha sido borrada con exito.")
+            deleteRun = False
+        except:
+            print("Ha ingresado un nombre invalido")
 
 
 def encuesta():
@@ -328,6 +323,37 @@ def encuesta():
             print(variable[i][1] + "| Calificacion: " + variable[i][0])
 
 
+def rating():
+    ratingBool = True
+
+    while (ratingBool):
+        try:
+            userRatingMovie = input("De que pelicula quiere evaluar?\n")
+            userRating = input("Que valor de 0 a 10 le daria a esta pelicula?\n")
+            movieBase = session.run("MATCH (n {Nombre:'" + userRatingMovie + "'})--(Pelicula)"
+                                                                              "RETURN n.Puntuacion")
+
+            movieBaseList = movieBase.value()
+
+
+
+            oldValue = (float)(movieBaseList[0])
+            userRating = (float)(userRating)
+            newValue = (userRating + oldValue) / 2
+            newValue = (str)(newValue)
+
+
+
+            session.run("MATCH (n {Nombre:'" + userRatingMovie + "'})" "SET n.Puntuacion = toString('"+ newValue+"')" "RETURN n.Nombre, n.Puntuacion")
+
+            ratingBool = False
+
+            print("Gracias por su retroalimentacion.\n")
+
+        except:
+            print("Ha ingresado un nombre invalido")
+
+
 begin()
 access(option)
 
@@ -339,92 +365,111 @@ if (granted):
     print("Bienvenido al programa")
     menu()
     while num != 5:
-        if(num == 1): #Encuesta
-          encuesta()
-          menu()
-        elif(num== 2): #Agregar pelicula
+        if (num == 1):  # Encuesta
+            encuesta()
+            menu()
+        elif (num == 2):  # Agregar pelicula
             menu_genero()
-              while num_genero != 7:
-                if(num_genero ==1): #Suspenso
-                  movieName = input("Ingrese el nombre de la pelicula de suspenso que desea agregar:\n")
-                  moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula")
-                  movieGenre = "Suspenso"
+            while num_genero != 7:
+                if (num_genero == 1):  # Suspenso
+                    movieName = input("Ingrese el nombre de la pelicula de suspenso que desea agregar:\n")
+                    moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula: ")
+                    movieGenre = "Suspenso"
 
-                  session.run("CREATE (p:Pelicula {Nombre:'"+movieName+"',Genero: '"+movieGenre+"',Puntuacion: '"+moiveRating+"'})")
-                  
-                elif(num_genero ==2): #Terror
-                  movieName = input("Ingrese el nombre de la pelicula de terror que desea agregar:\n")
-                  moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula")
-                  movieGenre = "Terror"
+                    session.run(
+                        "CREATE (p:Pelicula {Nombre:'" + movieName + "',Genero: '" + movieGenre + "',Puntuacion: '" + moiveRating + "'})")
 
-                  session.run("CREATE (p:Pelicula {Nombre:'"+movieName+"',Genero: '"+movieGenre+"',Puntuacion: '"+moiveRating+"'})")
+                    session.run("MATCH (p:Pelicula {Nombre: '" + movieName + "'})" 
+                                " MATCH (m:Genero {name: 'Suspenso'})"
+                                " CALL apoc.create.relationship(p, 'Es del genero', {roles:['Suspenso']}, m)"
+                                " YIELD rel"
+                                " RETURN rel")
+                    break
 
-                elif(num_genero ==3): #Anime
-                  movieName = input("Ingrese el nombre de la pelicula anime que desea agregar:\n")
-                  moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula")
-                  movieGenre = "Anime"
+                elif (num_genero == 2):  # Terror
+                    movieName = input("Ingrese el nombre de la pelicula de terror que desea agregar:\n")
+                    moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula: ")
+                    movieGenre = "Terror"
 
-                  session.run("CREATE (p:Pelicula {Nombre:'"+movieName+"',Genero: '"+movieGenre+"',Puntuacion: '"+moiveRating+"'})")
+                    session.run(
+                        "CREATE (p:Pelicula {Nombre:'" + movieName + "',Genero: '" + movieGenre + "',Puntuacion: '" + moiveRating + "'})")
 
-                elif(num_genero ==4): #Comedia
-                  movieName = input("Ingrese el nombre de la pelicula de comedia que desea agregar:\n")
-                  moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula")
-                  movieGenre = "Comedia"
+                    session.run("MATCH (p:Pelicula {Nombre: '" + movieName + "'})" 
+                                " MATCH (m:Genero {name: 'Terror'})"
+                                " CALL apoc.create.relationship(p, 'Es del genero', {roles:['Terror']}, m)"
+                                " YIELD rel"
+                                " RETURN rel")
+                    break
 
-                  session.run("CREATE (p:Pelicula {Nombre:'"+movieName+"',Genero: '"+movieGenre+"',Puntuacion: '"+moiveRating+"'})")
+                elif (num_genero == 3):  # Anime
+                    movieName = input("Ingrese el nombre de la pelicula anime que desea agregar:\n")
+                    moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula: ")
+                    movieGenre = "Anime"
 
-                elif(num_genero ==5): #Accion
-                  movieName = input("Ingrese el nombre de la pelicula de accion que desea agregar:\n")
-                  moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula")
-                  movieGenre = "Accion"
+                    session.run(
+                        "CREATE (p:Pelicula {Nombre:'" + movieName + "',Genero: '" + movieGenre + "',Puntuacion: '" + moiveRating + "'})")
 
-                  session.run("CREATE (p:Pelicula {Nombre:'"+movieName+"',Genero: '"+movieGenre+"',Puntuacion: '"+moiveRating+"'})")
+                    session.run("MATCH (p:Pelicula {Nombre: '" + movieName + "'})" 
+                                " MATCH (m:Genero {name: 'Anime'})"
+                                " CALL apoc.create.relationship(p, 'Es del genero', {roles:['Anime']}, m)"
+                                " YIELD rel"
+                                " RETURN rel")
+                    break
 
-                elif(num_genero ==6): #Romance
-                  movieName = input("Ingrese el nombre de la pelicula de romance que desea agregar:\n")
-                  moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula")
-                  movieGenre = "Romance"
+                elif (num_genero == 4):  # Comedia
+                    movieName = input("Ingrese el nombre de la pelicula de comedia que desea agregar:\n")
+                    moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula: ")
+                    movieGenre = "Comedia"
 
-                  session.run("CREATE (p:Pelicula {Nombre:'"+movieName+"',Genero: '"+movieGenre+"',Puntuacion: '"+moiveRating+"'})")
- 
-          menu()
+                    session.run(
+                        "CREATE (p:Pelicula {Nombre:'" + movieName + "',Genero: '" + movieGenre + "',Puntuacion: '" + moiveRating + "'})")
 
-        elif(num == 3): #Eliminar
-          menu()
-        elif(num == 4): #Puntuacion
-          menu()
+                    session.run("MATCH (p:Pelicula {Nombre: '" + movieName + "'})" 
+                                " MATCH (m:Genero {name: 'Comedia'})"
+                                " CALL apoc.create.relationship(p, 'Es del genero', {roles:['Comedia']}, m)"
+                                " YIELD rel"
+                                " RETURN rel")
+                    break
+
+                elif (num_genero == 5):  # Accion
+                    movieName = input("Ingrese el nombre de la pelicula de accion que desea agregar:\n")
+                    moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula: ")
+                    movieGenre = "Accion"
+
+                    session.run(
+                        "CREATE (p:Pelicula {Nombre:'" + movieName + "',Genero: '" + movieGenre + "',Puntuacion: '" + moiveRating + "'})")
+
+                    session.run("MATCH (p:Pelicula {Nombre: '" + movieName + "'})" 
+                                " MATCH (m:Genero {name: 'Accion'})"
+                                " CALL apoc.create.relationship(p, 'Es del genero', {roles:['Accion']}, m)"
+                                " YIELD rel"
+                                " RETURN rel")
+                    break
+
+                elif (num_genero == 6):  # Romance
+                    movieName = input("Ingrese el nombre de la pelicula de romance que desea agregar:\n")
+                    moiveRating = input("Ingrese el rating de 0 a 10 que le daria usted a esa pelicula: ")
+                    movieGenre = "Romance"
+
+                    session.run(
+                        "CREATE (p:Pelicula {Nombre:'" + movieName + "',Genero: '" + movieGenre + "',Puntuacion: '" + moiveRating + "'})")
+
+                    session.run("MATCH (p:Pelicula {Nombre: '" + movieName + "'})" 
+                                " MATCH (m:Genero {name: 'Romance'})"
+                                " CALL apoc.create.relationship(p, 'Es del genero', {roles:['Romance']}, m)"
+                                " YIELD rel"
+                                " RETURN rel")
+                    break
+
+            menu()
+
+        elif (num == 3):  # Eliminar
+            delete()
+            menu()
+        elif (num == 4):  # Puntuacion
+            rating()
+            menu()
     print("Gracias por utilizar el programa, vuelva pronto")
-
 
 if (option == "S"):
     print("Gracias por utilizar nuestro programa")
-
-
-
-
-def rating():
-  ratingBool = True
-
-  while(ratingBool):
-    try:
-        userRatingMovie = input("De que pelicula quiere evaluar?\n")
-        userRating = input("Que valor de 0 a 10 le daria a esta pelicula?\n")
-        movieBase = session.run("MATCH (n {Nombre:'("+ userRatingMovie +"'})--(Pelicula)"
-                              "RETURN Pelicula.Puntuacion")
-
-        movieBaseList = movieBase.value()
-
-        oldValue = movieBaseList[0]
-        newValue = (userRating + oldValue) / 2
-        
-        ("MATCH (n {Nombre:'"+userRatingMovie+"'}) SET n.Puntuacion = toString(newValue) RETURN n.Nombre, n.Puntuacion")
-
-        ratingBool = False
-
-      except:
-        print("Ha ingresado un nombre invalido")
-
-  
-  
-
-
