@@ -1,0 +1,2 @@
+uri="bolt://184.72.122.172:7687" ip de acceso
+auth=("algoritmos123", "algoritmos123") User y password del neo4j
