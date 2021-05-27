@@ -20,7 +20,7 @@ session = graphdp.session()
 
 # session.run("MATCH (Genero {name:Anime})--(Pelicula)", "RETURN Pelicula.Nombre")
 
-
+#Variable granted de la seccion de login
 granted = False
 
 
