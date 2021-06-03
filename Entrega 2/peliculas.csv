@@ -1,78 +1,77 @@
-﻿Titulo,Genero,Puntuacion
-Knives Out,Suspenso,8
-US,Suspenso,7
-The Irishman,Suspenso,8
-Rebecca,Suspenso,8
-A Quiet Place,Suspenso,8
-River Runs Red,Suspenso,4
-Spotlight,Suspenso,8
-The Third Man,Suspenso,8
-The Haunting of Sharon Tate,Suspenso,2
-Pyscho,Suspenso,9
-Dark Crimes,Suspenso,5
-Chaos,Suspenso,3
-Jaws,Suspenso,8
-Frankenstein,Terror,8
-It follows,Terror,6
-Aliens,Terror,8
-Eyes Without a Face,Terror,8
-Host,Terror,6
-Troll 2,Terror,8
-The Mangle,Terror,4
-It,Terror,7
-Relic,Terror,6
-Dracula,Terror,7
-The Happening,Terror,5
-Evil Dead 2:Dead by Dawn,Terror,8
-Sharknado,Terror,0
-Howls Moving Castle,Anime,8
-Conan The Boy in the Future,Anime,5
-Spirited Away,Anime,5
-Sword Art Online The Movie: Ordinal Scale,Anime,7
-A Silient Voice,Anime,8
-Rebuild of Evangelion,Anime,9
-The Girl Who Leapt Throug Time,Anime,8
-Nadia: The Secret Of Fuzzy,Anime,4
-Wolf Children,Anime,8
-Demon Slayer: Kimetsu no Yaiba the Movie: Mugen Train,Anime,9
-5 Centimeters per Second,Anime,8
-Your Name,Anime,8
-6 Angels,Anime,4
-Meet the Parents,Comedia,7
-Cats,Comedia,2
-Strange Wildnerness,Comedia,5
-The Honeymooners,Comedia,3
-Mean Girls,Comedia,7
-Pulp Fiction,Comedia,9
-Hot Fuzz,Comedia,8
-Palm Springs,Comedia,7
-Booksmart,Comedia,7
-Popstar: Never Stop never Stopping,Comedia,6
-School of Rock,Comedia,7
-Old School,Comedia,7
-The Big Sick,Comedia,8
-Black Panther,Accion,7
-Avengers: Endgame,Accion,8
-Mission: Impossible - Fallout,Accion,8
-Mad Max: Fury Road,Accion,6
-Dragonball Evolution,Accion,3
-Turbo: A Power Rangers Movie,Accion,3
-Spiderman-Man: Into the Spider-Verse,Accion,8
-King Kong Lives,Accion,3
-Wonder Woman,Accion,7
-River Runs Red 2,Accion,5
-Dunkirk,Accion,7
-Coco,Accion,8
-Thor: Ragnarok,Accion,8
-Logan,Accion,8
-It Happend One Night,Romantica,8
-Casablanca,Romantica,9
-A Night at the Opera,Romantica,8
-The Switch,Romantica,6
-The Shape of Water,Romantica,7
-An American in Paris,Romantica,7
-On the Waterfront,Romantica,8
-The Best Years of our Lives,Romantica,8
-Call Me by Your Name,Romantica,8
-The Lady Eve,Romantica,8
-Valentines Day,Romantica,5
+﻿Titulo,Genero,Puntuacion,Decada
+Knives Out,Suspenso,8,2000
+US,Suspenso,7,2010
+The Irishman,Suspenso,8,2010
+Rebecca,Suspenso,8,2020
+A Quiet Place,Suspenso,8,2010
+River Runs Red,Suspenso,4,2010
+Spotlight,Suspenso,8,2010
+The Third Man,Suspenso,8,1940
+The Haunting of Sharon Tate,Suspenso,2,2010
+Pyscho,Suspenso,9,1960
+Dark Crimes,Suspenso,5,2010
+Chaos,Suspenso,3,2000
+Jaws,Suspenso,8,1970
+Frankenstein,Terror,8,1930
+It follows,Terror,6,2010
+Aliens,Terror,8,1980
+Eyes Without a Face,Terror,8,1960
+Host,Terror,6,2020
+Troll 2,Terror,8,1990
+The Mangler,Terror,4,1990
+It,Terror,7,2010
+Relic,Terror,6,2020
+Dracula,Terror,7,1990
+The Happening,Terror,5,2000
+Evil Dead 2:Dead by Dawn,Terror,8,1980
+Sharknado,Terror,1,2010
+Howls Moving Castle,Anime,8,2000
+Conan The Boy in the Future,Anime,5,1970
+Spirited Away,Anime,5,2000
+Sword Art Online The Movie: Ordinal Scale,Anime,7,2010
+A Silient Voice,Anime,8,2010
+Rebuild of Evangelion,Anime,9,2010
+The Girl Who Leapt Throug Time,Anime,8,2000
+Nadia: The Secret Of Fuzzy,Anime,4,1990
+Wolf Children,Anime,8,2012
+Demon Slayer: Kimetsu no Yaiba the Movie: Mugen Train,Anime,9,2020
+5 Centimeters per Second,Anime,8,2000
+Your Name,Anime,8,2010
+6 Angels,Anime,4,2000
+Meet the Parents,Comedia,7,2000
+Cats,Comedia,2,2010
+Strange Wildnerness,Comedia,5,2000
+The Honeymooners,Comedia,3,1950
+Mean Girls,Comedia,7,2000
+Pulp Fiction,Comedia,9,1990
+Hot Fuzz,Comedia,8,2000
+Palm Springs,Comedia,7,2020
+Booksmart,Comedia,7,2010
+Popstar: Never Stop never Stopping,Comedia,6,2010
+School of Rock,Comedia,7,2000
+Old School,Comedia,7,2000
+The Big Sick,Comedia,2010
+Black Panther,Accion,7,2010
+Avengers: Endgame,Accion,8,2010
+Mission: Impossible,Accion,7,1990
+Mad Max: Fury Road,Accion,6,2010
+Dragonball Evolution,Accion,3,2009
+Turbo: A Power Rangers Movie,Accion,3,1990
+Spiderman-Man: Into the Spider-Verse,Accion,8,2010
+King Kong Lives,Accion,3,1980
+Wonder Woman,Accion,7,2010
+River Runs Red,Accion,5,2010
+Dunkirk,Accion,7,1950
+Thor: Ragnarok,Accion,2010
+Logan,Accion,8,2010
+It Happend One Night,Romantica,8,1930
+Casablanca,Romantica,9,1940
+A Night at the Opera,Romantica,8,1930
+The Switch,Romantica,6,2010
+The Shape of Water,Romantica,7,2010
+An American in Paris,Romantica,7,1950
+On the Waterfront,Romantica,8,1950
+The Best Years of our Lives,Romantica,8,1940
+Call Me by Your Name,Romantica,8,2010
+The Lady Eve,Romantica,8,1940
+Valentines Day,Romantica,5,2010
